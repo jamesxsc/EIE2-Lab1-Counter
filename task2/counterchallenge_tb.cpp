@@ -26,7 +26,7 @@ int main(int argc, char **argv, char **env) {
     top->en = 0;
 
     // Run the simulation for 300 clock cycles
-    for (i = 0; i < 300; i++) {
+    for (i = 0; i < 3000; i++) {
         // Toggle clock
         for (clk = 0; clk < 2; clk++) {
             tfp->dump(2 * i + clk);  // Dump to trace file
