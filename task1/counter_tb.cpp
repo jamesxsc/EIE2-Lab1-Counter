@@ -9,7 +9,7 @@ int main(int argc, char **argv, char **env) {
     // init 
     Verilated::commandArgs(argc, argv);
 
-    Vcounter* top = new VCounter;
+    Vcounter* top = new Vcounter;
 
     Verilated::traceEverOn(true); // init trace dump
     VerilatedVcdC* tfp = new VerilatedVcdC;
