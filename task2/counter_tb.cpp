@@ -18,7 +18,7 @@ int main(int argc, char **argv, char **env) {
     tfp->open("counter.vcd");
 
     //init vbuddy
-    if (vbdOpen()!=1 return(-1));
+    if (vbdOpen()!=1) return(-1);
     vbdHeader(" Lab 1: Counter");
 
     // initialize inputs to DUT

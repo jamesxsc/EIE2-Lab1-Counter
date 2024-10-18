@@ -1,5 +1,5 @@
 module counter #(
-    parameter WIDTH = 8;
+    parameter WIDTH = 8
 )(
     // interface signals
     input   logic               clk,    // clock
