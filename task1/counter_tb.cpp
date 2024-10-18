@@ -22,15 +22,29 @@ int main(int argc, char **argv, char **env) {
     top->en = 0;
 
     // run simulation
+    int stopFor = 0;
     for (i = 0; i < 300; i++) {
+        // Stop when counter gets to 9
+        if (top->count == 8 && stopFor == 0) {
+            stopFor = 2;
+        }
+
         // dump variables to trace
         for (clk = 0; clk < 2; clk++) {
             tfp->dump(2 * i * clk);
             top->clk = !top->clk;
             top->eval();
         }
+
+        // Set en
+        if (stopFor > 0) {
+            top->en = false;
+            stopFor--;
+        } else {
+            top->en = true;
+        }
+
         top->rst = (i < 2 || i == 15); // times to reset at
-        top->en = (i > 4);
         if (Verilated::gotFinish()) exit(0);
     }
 
