@@ -1,4 +1,4 @@
-module counter #(
+module counterchallenge #(
     parameter WIDTH = 8  // Counter width
 )(
     input logic clk,
